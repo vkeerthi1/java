@@ -80,5 +80,8 @@ public class java8Advanced {
                 .filter(x -> x.getKey() == 3)
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
         System.out.println(collecta);
+        //linode.com
+        //{2=heroku.com}
+       //{}
     }
 }
