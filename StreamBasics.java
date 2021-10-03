@@ -91,5 +91,18 @@ public class StreamBasics {
                 .collect(Collectors.toList());
         System.out.println(collectss);
     }
-
+/*
+Answers for above:
+java.util.stream.ReferencePipeline$3@2752f6e2
+[b]
+[arrayOfEmps[2], arrayOfEmps[3], arrayOfEmps[4], arrayOfEmps[5], arrayOfEmps[6]]
+[2, 5, 3, 4]
+false
+true
+false
+a# b# c
+[2, 4, 6, 8]
+[5]
+[2, 4, 8, 16, 32]
+*/
 }
