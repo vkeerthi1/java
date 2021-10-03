@@ -6,8 +6,10 @@ import java.util.stream.Stream;
 
 public class StreamBasics {
     public static void main(String[] args) {
-        Stream<String> st = Stream.iterate("", (str) -> str + "x");
+         Stream<String> st = Stream.iterate("", (str) -> str + "x");
         System.out.println(st.limit(3).map(str -> str + "y"));
+
+
 
         Collection<String> collection = Arrays.asList("a", "b", "c");
         Stream<String> streamOfCollection = collection.stream();
@@ -90,7 +92,37 @@ public class StreamBasics {
                 .limit(5)
                 .collect(Collectors.toList());
         System.out.println(collectss);
+
+
+        /*2.1 It’s challenging to process a Stream containing more than one level, like Stream<String[]> or Stream<List<LineItem>> or Stream<Stream<String>>. And we flat the 2 levels Stream into one level, like Stream<String> or Stream<LineItem>, so that we can easily loop the Stream and process it.
+                Stream<String[]>      -> flatMap ->	Stream<String>
+                Stream<Set<String>>   -> flatMap ->	Stream<String>
+                Stream<List<String>>  -> flatMap ->	Stream<String>
+                Stream<List<Object>>  -> flatMap ->	Stream<Object>*/
+
+
+        String[][] array = new String[][]{{"a", "b"}, {"c", "d"}, {"e", "f"}};
+
+
+        String[] result = Stream.of(array)  // Stream<String[]>
+                .flatMap(Stream::of)        // Stream<String>
+                .toArray(String[]::new);    // [a, b, c, d, e, f]
+
+        for (String s : result) {
+            System.out.println(s);
+        }
+
+
+        List<String> results = Stream.of(array)  // Stream<String[]>
+                .flatMap(Stream::of)        // Stream<String>
+                .collect(Collectors.toList());  // [a, b, c, d, e, f]
+
+        for (String s : results) {
+            System.out.println(s);
+        }
     }
+
+}
 /*
 Answers for above:
 java.util.stream.ReferencePipeline$3@2752f6e2
@@ -105,4 +137,3 @@ a# b# c
 [5]
 [2, 4, 8, 16, 32]
 */
-}
