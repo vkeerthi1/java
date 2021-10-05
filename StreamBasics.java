@@ -9,8 +9,6 @@ public class StreamBasics {
          Stream<String> st = Stream.iterate("", (str) -> str + "x");
         System.out.println(st.limit(3).map(str -> str + "y"));
 
-
-
         Collection<String> collection = Arrays.asList("a", "b", "c");
         Stream<String> streamOfCollection = collection.stream();
         //filter(); this produces a new stream that contains elements of the original stream that pass a given test (specified by a Predicate).
