@@ -2,8 +2,11 @@ package com.home;
 
 
 /*
-An Interface that contains exactly one abstract method is known as functional interface. It can have any number of default, static methods but can contain only one abstract method. It can also declare methods of object class.
-Functional Interface is also known as Single Abstract Method Interfaces or SAM Interfaces. It is a new feature in Java, which helps to achieve functional programming approach.
+An Interface that contains exactly one abstract method is known as functional interface. It can have any number of default,
+static methods but can contain only one abstract method. It can also declare methods of object class.
+
+Functional Interface is also known as Single Abstract Method Interfaces or SAM Interfaces. 
+It is a new feature in Java, which helps to achieve functional programming approach.
  */
 
 public class FunctionalInterfaceBasics{
