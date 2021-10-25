@@ -7,11 +7,11 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 
-//The real cause of ConcurrentModfiicationException is inconsistent modCount.
+/*The real cause of ConcurrentModfiicationException is inconsistent modCount.
 // When you are iterating over ArrayList then Iterator's next() method keep track of modCount.
 // If you modify the collection by adding or removing elements then modCount will change and
 // it will not match with the expected modCount,
-// hence Iterator will throw ConcurrentModificationException.
+// hence Iterator will throw ConcurrentModificationException*/
 
 //Solution: Use Iterator if you are doing it on the single-threaded environment,
 // otherwise use concurrent collection classes
