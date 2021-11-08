@@ -18,5 +18,3 @@ While collections have a finite size, streams need not. Short-circuiting operati
 
 >## 5.Consumable.
 The elements of a stream are only visited once during the life of a stream. Like an Iterator, a new stream must be generated to revisit the same elements of the source.
-
-
