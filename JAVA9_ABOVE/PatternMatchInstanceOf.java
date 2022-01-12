@@ -56,7 +56,7 @@ public class TrialInstanceMatch {
 //making your code shorter and easier to read:
 
 
- /*   public static double getPerimeterJava9(Shape shape) throws IllegalArgumentException {
+   public static double getPerimeterJava9(Shape shape) throws IllegalArgumentException {
         if (shape instanceof Rectangle s){
             return 2 * s.length() + 2 * s.width();
             // You can use the binding variable s (of type Rectangle) here.
@@ -80,7 +80,16 @@ public class TrialInstanceMatch {
     }
 
     //You can use a binding variable in the expression of an if statement:
-     if(shape instanceof Rectangle s && s.length()>5)
+    /* if(shape instanceof Rectangle s && s.length()>5)
     {
 
     }*/
+
+
+   public static double getPerimeterJava17(Shape shape) throws IllegalArgumentException {
+        switch(shape) {
+            case Rectangle r: return 2 * r.length() + 2 * r.width();
+            case Circle c:    return 2 * c.radius() * Math.PI;
+            default: throw new IllegalArgumentException("Unrecognized shape");
+        }
+    }
