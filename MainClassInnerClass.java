@@ -16,3 +16,33 @@ public class MainClassInnerClass {
 
     }
 }
+
+//Other Outer Class
+
+public class OuterClass {
+    public void heyThere() {
+        System.out.println("Outer here");
+
+        class LocalInnerClass {
+            String local = "keerthi";
+
+            public void printlocal() {
+                System.out.println("local Inner here");
+            }
+        }
+        LocalInnerClass lic = new LocalInnerClass();
+        lic.printlocal();
+    }
+
+    public class InnerClass {
+        public void heyThere() {
+            System.out.println("Inner here");
+        }
+    }
+
+    public static class Inner2Class {
+        public void heyThere2() {
+            System.out.println("Inner 2 here");
+        }
+    }
+}
